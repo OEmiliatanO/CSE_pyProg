@@ -197,7 +197,7 @@ else:
     listF = list(F)
     mapp = {'J':11, 'Q':12, 'K':13, 'A':14}
     for key in mapp:
-        if key in listF:
+        while key in listF:
             listF[listF.index(key)] = mapp[key]
     F = listF
 
