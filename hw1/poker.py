@@ -226,7 +226,7 @@ else:
 #   This checks for straights (not royal ones, since step 26 handled those).
 #   But note that the ACE, if used in a non-royal straight, can only function
 #   as the "1", in a 1-5 sequence (and yet its value is stuck at 14, not 1).
-    elif (F[0] == 2 and F[3] == 5 and F[4] == 14) or any(F[0] == x and F[4] == x + 4 for x in range(2,9)):
+    elif (F[0] == 2 and F[3] == 5 and F[4] == 14) or any(F[0] == x and F[4] == x + 4 for x in range(2,10)):
 
 #       29.
 #       This part either prints "Straight flush!" or "Straight!":
