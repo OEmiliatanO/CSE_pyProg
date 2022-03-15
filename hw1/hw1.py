@@ -63,7 +63,7 @@ else:
 		else:
 			print("Royal straight!")
 
-	elif (F[0] == 2 and F[3] == 5 and F[4] == 14) or any(F[0] == x and F[4] == x + 4 for x in range(2,9)):
+	elif (F[0] == 2 and F[3] == 5 and F[4] == 14) or any(F[0] == x and F[4] == x + 4 for x in range(2,10)):
 		if flush:
 			print("Straight flush!")
 		else:
