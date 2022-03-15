@@ -85,7 +85,7 @@ for Round in range(3):
 
 #   8.
 #   Asks the user for input on which cards to discard. Same as pokerBasic.py.
-    todiscard = input("\nEnter the letters (a-e) all of the cards you want to discard:")
+    todiscard = input("\nEnter the letters (a-e) all of the cards you want to discard:").strip()
 
 #   9.    
 #   This loops through the characters the user inputted. But, unlike in the
@@ -107,12 +107,12 @@ for Round in range(3):
 
 #       10.
 #       This deletes cards from the hand. Same as pokerBasic.py.
-        if ch.isalpha() and ch in ['a','b','c','d','e']:
+        if ch.isalpha() and ch.lower() in [chr(ord('a') + i) for i in range(5)]:
             del phand[ord(ch.lower()) - ord('a')]
 
 #   11.
 #   This ends the loop early if no cards discarded. Same as pokerBasic.py.
-    if len(phand) == 5:
+    if len(todiscard) == 0:
         break
 
 #   12.

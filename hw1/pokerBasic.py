@@ -56,7 +56,7 @@ for Round in range(3):
 
 #   8.
 #   This next line asks the user for input on which cards to discard.
-    todiscard = input("\nEnter the letters (a-e) all of the cards you want to discard:")
+    todiscard = input("\nEnter the letters (a-e) all of the cards you want to discard:").strip()
 
 #   9.    
 #   This next line loops through all the characters that the user inputted.
@@ -92,12 +92,12 @@ for Round in range(3):
 #       we can find how to compute from 'a' to the zeroeth (ie the 1st), and
 #       from 'e' to the foureth (ie, the 5th).
 #       So insert your code to delete the correct card here:
-        if ch.isalpha():
+        if ch.isalpha() and ch.lower() in [chr(ord('a') + i) for i in range(5)]:
             del phand[ord(ch.lower()) - ord('a')]
 
 #   11.
 #   This next part ends the loop early if no cards were discarded.
-    if len(phand) == 5:
+    if len(todiscard) == 0:
         break
 
 #   12.
