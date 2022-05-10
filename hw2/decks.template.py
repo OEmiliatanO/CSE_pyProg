@@ -48,7 +48,7 @@ def printdeckV3():
     provide arguments to the function call of print.
  
     Note that you cannot use any "[" or "]" symbols."""
-    print("Hand:", (bs := random.shuffle(bytearray(range(52)))).__getitem__(0), bs.__getitem__(1), bs.__getitem__(2), bs.__getitem__(3), bs.__getitem__(4), "\nTwo more cards:", bs.__getitem__(5), bs.__getitem__(6))
+    print("Hand:", (bs := random.shuffle(bytearray(range(52)))).__getitem__(0), bs.__getitem__(1), bs.__getitem__(2), bs.__getitem__(3), bs.__getitem__(4), "\nTwo more cards:", bs.__getitem__(5), bs.__getitem__(6), sep=' ')
 
 
 #---------------------------------------------------#
