@@ -48,7 +48,7 @@ def printdeckV3():
     provide arguments to the function call of print.
  
     Note that you cannot use any "[" or "]" symbols."""
-    print("Hand:", (deckV3:=[*map(faceOf, sample(range(NUMCARD), NUMCARD))])[:5], "\nTwo more cards:", deckV3[5:7])
+    print("Hand:", (deckV3:=list(map(faceOf, sample(range(NUMCARD), NUMCARD)))).__getitem__(slice(0,5)), "\nTwo more cards:", deckV3.__getitem__(slice(5,7)))
 
 
 #---------------------------------------------------#
