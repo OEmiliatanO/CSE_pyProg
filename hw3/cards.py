@@ -149,7 +149,9 @@ class Hand():
         Technically, there are a few cases where to hand will score the same,
         even though the rules of poker define a tie-breaker. That is not
         important, however, and this function works well enough. """
-        S=self.__str__().replace('royal straight','straight Ace high').replace('straight Ace high flush','flush Ace high').replace('straight flush','flush straight')
+        S=self.__str__().replace('royal straight','straight Ace high').replace\
+                                ('straight Ace high flush','5414').replace\
+                                ('straight flush','flush straight')
         if S[0].islower(): S = "one "+S
         code={'Two':'02','Three':'03','Four':'04','Five':'05','Six':'06',
               'Seven':'07','Eight':'08','Nine':'09','Ten':'10','Jack':'11',
@@ -158,7 +160,7 @@ class Hand():
               'three ':'3','straight':'4','flush':'5','full house: ':'6',
               'four ':'7','s':'',' and ':'.',' high':''}
         for k in code: S=S.replace(k,code[k])
-        return float(S.replace(' ',''))
+        return float(S.replace(' ','').replace(',',''))
 
     def __le__(self, otherHand):
         """Returns True if this hand is <= the otherHand.
