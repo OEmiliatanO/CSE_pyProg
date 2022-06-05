@@ -98,7 +98,6 @@ class Hand():
         if len(self.hand) <  5:
             return "incomplete hand"
 
-        F, S = zip(*self.hand)
         F = [x[:-1] for x in self.hand]
         S = [x[-1:] for x in self.hand]
 
