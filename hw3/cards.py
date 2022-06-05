@@ -268,3 +268,21 @@ try:
     print(len(player1))
 except:
     print("Player 1 retired")
+
+SS=["Ace high", "King high", "Queen high", "Jack high", "Ten high", "Nine high",
+"two Aces", "two Kings","two Queens", "two Jacks", "two Tens", "two Nines",
+"two Twos", "three Aces", "three Kings", "three Queens", "three Twos",
+"two pair: Aces and Kings", "full house: Aces and Kings",
+"full house: Sevens and Fours", "full house: Fours and Sevens",
+"four Aces", "four Kings",
+"four Queens", "four Jacks", "four Tens","four Nines","royal straight flush",
+"straight flush King high", "straight flush Jack high",
+"straight flush Nine high", "flush King high", "flush Nine high",
+"royal straight", "straight King high", "straight Jack high",
+"straight Nine high"]
+
+def score(x):
+    return Hand._Hand__score(x)
+
+for x in SS:
+    print(x,score(x))
