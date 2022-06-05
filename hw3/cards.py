@@ -136,12 +136,12 @@ class Hand():
 
             elif (F[0] == 2 and F[3] == 5 and ((high := F[4]) == 14)) or any(F[0] == x and ((high := F[4]) == x + 4) for x in range(2,10)):
                 if flush:
-                    return "straight flush, " + NumtoWord[high] + " high"
+                    return "straight flush " + NumtoWord[high][:-1] + " high"
                 else:
-                    return "straight, " + NumtoWord[high] + " high"
+                    return "straight " + NumtoWord[high][:-1] + " high"
 
-            elif flush: "flush, " + NumtoWord[F[4]]
-            else: return NumtoWord[F[4]] + " high"
+            elif flush: "flush " + NumtoWord[F[4]][:-1]
+            else: return NumtoWord[F[4]][:-1] + " high"
 
     def __score(self):
         """I am giving you this function. It uses __str__ to score the hand
@@ -225,9 +225,8 @@ class Hand():
         display properly, if there are more than 9.                        """
 
         print("┏━━━━┓   ┏━━━━┓   ┏━━━━┓   ┏━━━━┓   ┏━━━━┓")
-        print(" ", end = '')
         for i in range(5):
-            print("|", self.hand[i], '|', end = '   ')
+            print("┃{: ^4}┃".format(self.hand[i]), end = '   ')
         print("\n┃    ┃   ┃    ┃   ┃    ┃   ┃    ┃   ┃    ┃\n┃    ┃   ┃    ┃   ┃    ┃   ┃    ┃   ┃    ┃\n┃    ┃   ┃    ┃   ┃    ┃   ┃    ┃   ┃    ┃\n┗━━━━┛   ┗━━━━┛   ┗━━━━┛   ┗━━━━┛   ┗━━━━┛   ")
 
     def discard(self, pos, replace = True):
