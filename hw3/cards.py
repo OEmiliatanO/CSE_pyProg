@@ -20,14 +20,12 @@ class Hand():
 
     They also have a private method __score (which I've written for you).   """
     
-    __deck = [x for x in range(52)]
-    random.shuffle(__deck)
+    __deck = sorted([x for x in range(52)], key = lambda k: random.random())
     __players = []
     
     @classmethod
     def new(cls):
-        cls.__deck = [x for x in range(52)]
-        random.shuffle(cls.__deck)
+        cls.__deck = sorted([x for x in range(52)], key = lambda k: random.random())
         for player in cls.__players:
             player.hand = []
 
